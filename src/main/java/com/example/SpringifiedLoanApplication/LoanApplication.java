@@ -2,7 +2,7 @@ package com.example.SpringifiedLoanApplication;
 
 public class LoanApplication implements ILoanApplication{
 
-    private String ssn;
+    private String ssn ="";
 
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
