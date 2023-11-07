@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 public class ParameterizedLoanAgentTests {
@@ -20,7 +21,8 @@ public class ParameterizedLoanAgentTests {
     @BeforeEach
     public void setUp() {
         uut = new LoanAgent();
-        loanApplication = () -> {return "123-45-6789";};
+        loanApplication = mock(ILoanApplication.class);
+        when(loanApplication.getSSN()).thenReturn("123-45-6789");
         uut.setMinimumCreditScore(720);
         errorLog = mock(IErrorLog.class);
         uut.setErrorLog(errorLog);
