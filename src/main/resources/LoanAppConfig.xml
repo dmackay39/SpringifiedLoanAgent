@@ -3,4 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="dummyLoanApplication" class = "com.example.SpringifiedLoanApplication.LoanApplication"> </bean>
+
+    <bean id="dummyCreditAgency" class="com.example.SpringifiedLoanApplication.DummyCreditAgency"/>
+
+    <bean id="dummyErrorLog" class="com.example.SpringifiedLoanApplication.DummyErrorLog"/>
+
+    <bean id="loanAgent" class="com.example.SpringifiedLoanApplication.LoanAgent">
+        <property name="agency" ref="dummyCreditAgency"></property>
+        <property name="errorLog" ref="dummyErrorLog"></property>
+    </bean>
+
+
 </beans>
