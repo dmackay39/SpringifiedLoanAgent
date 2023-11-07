@@ -1,7 +1,8 @@
 package com.example.SpringifiedLoanApplication;
 
-@FunctionalInterface
 public interface ILoanApplication {
     public String getSSN();
+
+    public void setSSN(String ssn);
 
 }
